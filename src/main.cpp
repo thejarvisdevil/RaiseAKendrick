@@ -94,10 +94,14 @@ public:
 	}
 
 	void suggest(CCObject*) {
-		if (auto popup = GJWriteMessagePopup::create(30483751, 257687092)) {
-			popup->updateSubject(gd::string("Suggestion For Kendrick"));
-			popup->show();
-		}
+		#ifdef GEODE_IS_APPLE
+		    FLAlertLayer::create("Suggestions", "Please send suggestions to jarvisdevil in-game or @jarvisdevlin on Discord.", "OK")->show();
+		#else
+		    if (auto popup = GJWriteMessagePopup::create(30483751, 257687092)) {
+			    popup->updateSubject(gd::string("Suggestion For Kendrick"));
+			    popup->show();
+		    }
+		#endif
 	}
 
 	void KILL() {
