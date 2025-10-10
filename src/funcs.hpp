@@ -11,7 +11,7 @@ namespace devlin {
 		if (!layer) return;
 		auto win = CCDirector::get()->getWinSize();
 
-		if (auto bro = dynamic_cast<CCLabelBMFont*>(layer->getChildByID("roomTitle"_spr))) {
+		if (auto bro = typeinfo_cast<CCLabelBMFont*>(layer->getChildByID("roomTitle"_spr))) {
 			bro->setString(title.c_str());
 		} else {
 			auto yay = CCLabelBMFont::create(title.c_str(), "bigFont.fnt");
@@ -21,7 +21,7 @@ namespace devlin {
 			layer->addChild(yay, 1);
 		}
 
-		if (auto old = dynamic_cast<CCSprite*>(layer->getChildByID("roomBg"_spr))) {
+		if (auto old = typeinfo_cast<CCSprite*>(layer->getChildByID("roomBg"_spr))) {
 			layer->removeChild(old, true);
 			if (auto bg = CCSprite::create(background.c_str())) {
 				auto s = bg->getContentSize();
@@ -56,7 +56,7 @@ namespace devlin {
 		using namespace geode::prelude;
 
 		auto win = CCDirector::get()->getWinSize();
-		auto old = dynamic_cast<CCSprite*>(layer->getChildByID("character"_spr));
+		auto old = typeinfo_cast<CCSprite*>(layer->getChildByID("character"_spr));
 		CCPoint pos = {0, 0};
 		if (old) {
 			pos = old->getPosition();
