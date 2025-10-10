@@ -6,7 +6,7 @@
 using namespace geode::prelude;
 
 namespace devlin {
-	inline static CCSprite* createSpriteCustom(const char* path) {
+	inline static CCSprite* createSpriteCustom(const char* pathToFile) {
 		auto sprite = new CCSprite();
 		if (sprite->initWithFile(pathToFile)) {
 			sprite->autorelease();
