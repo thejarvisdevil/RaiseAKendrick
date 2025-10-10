@@ -1,5 +1,5 @@
 {
-	"geode": "4.6.2",
+	"geode": "4.7.0",
 	"gd": {
 		"win": "2.2074",
 		"android": "2.2074",
@@ -8,18 +8,12 @@
 	},
 	"id": "jarvisdevil.raise_a_kendrick_lamar",
 	"name": "Raise a Kendrick Lamar",
-	"version": "v1.0.2",
+	"version": "v1.0.3",
 	"developer": "jarvisdevil",
 	"description": "Adopt & Raise a Cute Baby Kendrick Lamar",
 	"dependencies": {
-		"geode.node-ids": {
-			"version": ">=v1.20.1",
-			"importance": "required"
-		},
-		"user95401.gif-sprites": {
-			"version": ">=v2.0.0",
-			"importance": "required"
-		}
+		"geode.node-ids": ">=v1.20.1",
+		"prevter.imageplus": ">=v2.0.0"
 	},
 	"resources": {
 		"sprites": [
