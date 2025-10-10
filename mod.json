@@ -13,7 +13,7 @@
 	"description": "Adopt & Raise a Cute Baby Kendrick Lamar",
 	"dependencies": {
 		"geode.node-ids": ">=v1.20.1",
-		"prevter.imageplus": ">=v2.0.0"
+		"prevter.imageplus": ">=v1.0.3"
 	},
 	"resources": {
 		"sprites": [
