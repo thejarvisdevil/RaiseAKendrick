@@ -97,14 +97,10 @@ public:
 	}
 
 	void suggest(CCObject*) {
-		#ifdef GEODE_IS_IOS
-		    FLAlertLayer::create("Suggestions", "Please send suggestions to jarvisdevil in-game or @jarvisdevlin on Discord.", "OK")->show();
-		#else
-		    if (auto popup = GJWriteMessagePopup::create(30483751, 257687092)) {
-			    popup->updateSubject(gd::string("Suggestion For Kendrick"));
-			    popup->show();
-		    }
-		#endif
+		if (auto popup = GJWriteMessagePopup::create(30483751, 257687092)) {
+			popup->updateSubject(gd::string("Suggestion For Kendrick"));
+			popup->show();
+		}
 	}
 
 	void KILL() {

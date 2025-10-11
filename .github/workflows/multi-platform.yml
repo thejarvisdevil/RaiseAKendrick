@@ -39,6 +39,8 @@ jobs:
       - name: Build the mod
         uses: geode-sdk/build-geode-mod@main
         with:
+          bindings: RayDeeUx/bindings
+          bindings-ref: kendrick-lamar
           combine: true
           target: ${{ matrix.config.target }}
 
