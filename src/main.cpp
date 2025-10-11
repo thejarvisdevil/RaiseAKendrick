@@ -1,7 +1,6 @@
 #include <Geode/Geode.hpp>
 #include <Geode/modify/MenuLayer.hpp>
 #include <Geode/binding/FMODAudioEngine.hpp>
-#include <user95401.gif-sprites/include/CCGIFAnimatedSprite.hpp>
 #include <algorithm>
 #include "funcs.hpp"
 #include "rooms/livingroom.hpp"
