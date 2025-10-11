@@ -11,7 +11,7 @@ namespace rooms {
         void tv(CCObject*) {
             if (parent) {
                 FMODAudioEngine::sharedEngine()->stopAllMusic(true);
-                devlin::set_emotion(parent, "sad.gif"_spr, 3.0f, 0.5f, 0.5f);
+                devlin::set_emotion(parent, "sad.webp"_spr, 3.0f, 0.5f, 0.5f);
                 FMODAudioEngine::sharedEngine()->playEffect("tungtungtungsahurbeatupman.mp3"_spr);
             }
         }

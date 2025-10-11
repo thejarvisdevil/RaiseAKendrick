@@ -21,7 +21,7 @@
 			"resources/image/items/*.png"
 		],
 		"files": [
-			"resources/image/*.gif",
+			"resources/image/*.webp",
 			"resources/audio/*.mp3"
 		]
 	},

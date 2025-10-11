@@ -6,15 +6,6 @@
 using namespace geode::prelude;
 
 namespace devlin {
-	CCSprite* createSpriteCustom(const char* pathToFile) {
-		auto sprite = new CCSprite();
-		if (sprite->initWithFile(pathToFile)) {
-			sprite->autorelease();
-			return sprite;
-		}
-		delete sprite;
-		return nullptr;
-	}
 	inline void set_room(geode::prelude::CCLayer* layer, const std::string& title, const std::string& background) {
 		if (!layer) return;
 		auto win = CCDirector::get()->getWinSize();
@@ -74,7 +65,7 @@ namespace devlin {
 		}
 
 		CCSprite* kendrick = nullptr;
-		if (auto gif = devlin::createSpriteCustom(file.c_str())) { kendrick = gif; }
+		if (auto gif = CCSprite::create(file.c_str())) { kendrick = gif; }
 		if (!kendrick) return;
 
 		auto size = kendrick->getContentSize();

@@ -135,7 +135,7 @@ public:
 			addChild(weeeeee);
 			weeeeee->setID("room-menu"_spr);
 		}
-		devlin::set_emotion(this, "excited.gif"_spr, 3.0f, 0.5f, 0.5f);
+		devlin::set_emotion(this, "excited.webp"_spr, 3.0f, 0.5f, 0.5f);
 	}
 
 	static cocos2d::CCScene* scene() {

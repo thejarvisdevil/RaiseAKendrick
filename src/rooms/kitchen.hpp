@@ -11,7 +11,7 @@ namespace rooms {
         void mango(CCObject*) {
             auto win = CCDirector::get()->getWinSize();
             if (parent) {
-                devlin::set_emotion(parent, "food.gif"_spr, 3.0f, 0.3f, 0.2f);
+                devlin::set_emotion(parent, "food.webp"_spr, 3.0f, 0.3f, 0.2f);
                 FMODAudioEngine::sharedEngine()->playEffect("airhorn.mp3"_spr);
             }
         }
@@ -19,7 +19,7 @@ namespace rooms {
         void brocco(CCObject*) {
             auto win = CCDirector::get()->getWinSize();
             if (parent) {
-                devlin::set_emotion(parent, "disgust.gif"_spr, 3.0f, 0.3f, 0.2f);
+                devlin::set_emotion(parent, "disgust.webp"_spr, 3.0f, 0.3f, 0.2f);
                 FMODAudioEngine::sharedEngine()->playEffect("disgusting.mp3"_spr);
             }
         }
@@ -27,7 +27,7 @@ namespace rooms {
         void knife(CCObject*) {
             auto win = CCDirector::get()->getWinSize();
             if (parent) {
-                devlin::set_emotion(parent, "sad.gif"_spr, 3.0f, 0.3f, 0.2f);
+                devlin::set_emotion(parent, "sad.webp"_spr, 3.0f, 0.3f, 0.2f);
                 FMODAudioEngine::sharedEngine()->playEffect("marioscreaming.mp3"_spr);
                 FLAlertLayer::create("No!", "<cr>pls no ok tank...</c>", "lol")->show();
             }
@@ -46,7 +46,7 @@ namespace rooms {
         auto win = CCDirector::get()->getWinSize();
         auto things = new kitchen_stuff();
         things->parent = parent;
-        devlin::set_emotion(parent, "excited.gif"_spr, 3.0f, 0.3f, 0.2f);
+        devlin::set_emotion(parent, "excited.webp"_spr, 3.0f, 0.3f, 0.2f);
 
         auto mango = CCMenuItemSpriteExtra::create(CCSprite::create("mango.png"_spr), nullptr, things, menu_selector(kitchen_stuff::mango));
         mango->setPosition({win.width * 0.7f, win.height / 2.2f});

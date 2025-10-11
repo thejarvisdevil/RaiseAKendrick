@@ -10,7 +10,7 @@ namespace rooms {
         cocos2d::CCLayer* parent = nullptr;
         void sleep(CCObject*) {
             if (parent) {
-                devlin::set_emotion(parent, "angry.gif"_spr, 3.0f, 0.7f, 0.5f);
+                devlin::set_emotion(parent, "angry.webp"_spr, 3.0f, 0.7f, 0.5f);
                 FMODAudioEngine::sharedEngine()->playEffect("pou_no.mp3"_spr);
             }
         }
@@ -33,7 +33,7 @@ namespace rooms {
                     r->setVisible(false);
                 }
                 
-                devlin::set_emotion(parent, "sad.gif"_spr, 3.0f, 0.7f, 0.5f);
+                devlin::set_emotion(parent, "sad.webp"_spr, 3.0f, 0.7f, 0.5f);
                 FMODAudioEngine::sharedEngine()->playMusic("fnaf.mp3"_spr, false, 1.0f, 0);
             }
         }
@@ -43,7 +43,7 @@ namespace rooms {
         auto win = CCDirector::get()->getWinSize();
         auto things = new bedroom_stuff();
         things->parent = parent;
-        devlin::set_emotion(parent, "excited.gif"_spr, 3.0f, 0.7f, 0.5f);
+        devlin::set_emotion(parent, "excited.webp"_spr, 3.0f, 0.7f, 0.5f);
 
         auto sleep = CCMenuItemSpriteExtra::create(CCSprite::create("sleep.png"_spr), nullptr, things, menu_selector(bedroom_stuff::sleep));
         sleep->setPosition({win.width - 260.f, win.height / 2.f});
