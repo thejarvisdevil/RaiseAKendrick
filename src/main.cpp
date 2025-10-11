@@ -20,12 +20,13 @@ public:
 
 	bool init() override {
 		if (!CCLayer::init()) return false;
+		this->setKeypadEnabled(true);
 		FMODAudioEngine::sharedEngine()->playMusic("bgm.mp3"_spr, true, 1.0f, 0);
 		auto win = CCDirector::get()->getWinSize();
 
 	    auto exitbtn = CCSprite::createWithSpriteFrameName("GJ_closeBtn_001.png");
 	    exitbtn->setScale(0.5f);
-		auto f = CCMenuItemSpriteExtra::create(exitbtn, nullptr, this, menu_selector(KendrickLayer::GOBACK));
+		auto f = CCMenuItemSpriteExtra::create(exitbtn, nullptr, this, menu_selector(KendrickLayer::onBack));
 		f->setPosition({win.width - 30.f, win.height - 30.f});
 		f->setID("exit-btn"_spr);
 
@@ -74,12 +75,12 @@ public:
 		return true;
 	}
 
-	void GOBACK(CCObject*) {
+	void onBack(CCObject*) {
 		CCDirector::get()->popScene();
 	}
 
 	virtual void keyBackClicked() {
-        CCDirector::get()->popScene();
+        this->onBack(nullptr);
     }
 
 	void prevRoom(CCObject*) {
