@@ -75,8 +75,12 @@ public:
 	}
 
 	void GOBACK(CCObject*) {
-		CCDirector::get()->replaceScene(CCTransitionFade::create(0.5f, MenuLayer::scene(false)));
+		CCDirector::get()->popScene();
 	}
+
+	virtual void keyBackClicked() {
+        CCDirector::get()->popScene();
+    }
 
 	void prevRoom(CCObject*) {
 		currentRoom = (currentRoom - 1 + (int)rooms.size()) % (int)rooms.size();
@@ -93,7 +97,7 @@ public:
 	}
 
 	void suggest(CCObject*) {
-		#ifdef GEODE_IS_APPLE
+		#ifdef GEODE_IS_IOS
 		    FLAlertLayer::create("Suggestions", "Please send suggestions to jarvisdevil in-game or @jarvisdevlin on Discord.", "OK")->show();
 		#else
 		    if (auto popup = GJWriteMessagePopup::create(30483751, 257687092)) {
@@ -170,6 +174,6 @@ class $modify(KLMenuLayer, MenuLayer) {
 		if (1 == 1) {
 			geode::log::info("tank u 4 usin my Mod :) - jarvisdevil");
 		}
-		CCDirector::get()->replaceScene(CCTransitionFade::create(0.5f, KendrickLayer::scene()));
+		CCDirector::get()->pushScene(CCTransitionFade::create(0.5f, KendrickLayer::scene()));
 	}
 };

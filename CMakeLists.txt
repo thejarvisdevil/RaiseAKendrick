@@ -13,10 +13,6 @@ endif()
 file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS src/*.cpp)
 add_library(${PROJECT_NAME} SHARED ${SOURCES})
 
-if ("${CMAKE_SYSTEM_NAME}" STREQUAL "iOS" OR DEFINED IOS OR "${CMAKE_SYSTEM_NAME}" STREQUAL "Darwin")
-    target_compile_definitions(${PROJECT_NAME} PRIVATE GEODE_IS_APPLE=1)
-endif()
-
 if (NOT DEFINED ENV{GEODE_SDK})
     message(FATAL_ERROR "Unable to find Geode SDK! Please define GEODE_SDK environment variable to point to Geode")
 else()
