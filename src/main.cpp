@@ -21,7 +21,7 @@ public:
 	bool init() override {
 		if (!CCLayer::init()) return false;
 		this->setKeypadEnabled(true);
-		GameManager::fadeInMusic("bgm.mp3"_spr);
+		GameManager::get()->fadeInMusic("bgm.mp3"_spr);
 		auto win = CCDirector::get()->getWinSize();
 
 	    auto exitbtn = CCSprite::createWithSpriteFrameName("GJ_closeBtn_001.png");
@@ -77,7 +77,7 @@ public:
 
 	void onBack(CCObject*) {
 		CCDirector::get()->popScene();
-		GameManager::fadeInMenuMusic();
+		GameManager::get()->fadeInMenuMusic();
 	}
 
 	virtual void keyBackClicked() {
