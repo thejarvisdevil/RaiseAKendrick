@@ -73,6 +73,26 @@ namespace rooms {
                 FMODAudioEngine::sharedEngine()->playEffect("pou_no.mp3"_spr);
             }
         }
+
+        void jojo(CCObject*) {
+            if (parent) {
+                std::vector<std::string> messages = {
+                    "I need you to rob a bank for me and buy me a new car. I NEED THAT LAMBORGHINI.",
+                    "I need you to steal a new iPhone for me. I was on that TikTok grind and I dropped my phone into a woodchipper.",
+                    "I need you to get me a new dog. My dog ran after the 22 unsupervised children at the park and never came back.",
+                    "I need you to get me free robux. I want Dominus....",
+                    "I need you to get me a new laptop. I was hacked by Anonymous and they took all my fortnite skins.",
+                    "I need you to get me an Ice Age DVD from Blockbuster. It was so good!",
+                    "I need you to kidnap the Nickelodeon CEO, they bein so MEAN!!!",
+                    "I need you to steal me 10000000 bow ties...",
+                    "I need you to steal me a new Expensive Outfit.. They will LOOK SO GOOD for my next Music Video!",
+                    "I need you to kidnap jarvisdevil, he is being very mean to me on twitter.",
+                    "I am Jojo."
+                };
+                std::string message = messages[rand() % messages.size()];
+                FLAlertLayer::create("Jojo Siwa", "<cd>Jojo has a bizarre adventure for you:</c>\n\n" + message, "OK")->show();
+            }
+        }
     };
 
     inline cocos2d::CCMenu* theoutside(cocos2d::CCLayer* parent = nullptr) {
@@ -96,11 +116,16 @@ namespace rooms {
         grass->setPosition({win.width - 120.f, win.height - 240.f});
         grass->setID("grass"_spr);
 
+        auto jojo = CCMenuItemSpriteExtra::create(CCSprite::create("jojosiwa.png"_spr), nullptr, things, menu_selector(outside_stuff::jojo));
+        jojo->setPosition({win.width / 12.f, win.height / 2.f});
+        jojo->setID("jojo"_spr);
+
         auto menu = CCMenu::create();
         menu->setPosition({0,0});
         menu->addChild(nuke);
         menu->addChild(ball);
         menu->addChild(grass);
+        menu->addChild(jojo);
         menu->addChild(things);
         menu->setID("room-menu"_spr);
         return menu;

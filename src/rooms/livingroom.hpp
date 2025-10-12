@@ -16,6 +16,13 @@ namespace rooms {
             }
         }
 
+        void microphone(CCObject*) {
+            if (parent) {
+                devlin::set_emotion(parent, "happy.gif"_spr, 3.0f, 0.5f, 0.5f);
+                FMODAudioEngine::sharedEngine()->playMusic("notlikeus.mp3"_spr, true, 0.0f, 0);
+            }
+        }
+
         void peashooter(CCObject*) {
             if (parent) {
                 std::vector<std::string> messages = {
@@ -42,6 +49,12 @@ namespace rooms {
                 FLAlertLayer::create("Peashooter", message, "OK")->show();
             }
         }
+
+        void clock(CCObject*) {
+            if (parent) {
+                FLAlertLayer::create("Clock", "<cg>The current time is:</c>\n<cr>ADVENTURE TIME!</c>", "OK")->show();
+            }
+        }
     };
 
     inline cocos2d::CCMenu* thelivingroom(cocos2d::CCLayer* parent = nullptr) {
@@ -57,6 +70,14 @@ namespace rooms {
         tele->setPosition({win.width / 6.5f, win.height / 2.4f});
         tele->setID("tv"_spr);
 
+        auto microphone = CCMenuItemSpriteExtra::create(CCSprite::create("microphone.png"_spr), nullptr, things, menu_selector(livingroom_stuff::microphone));
+        microphone->setPosition({win.width - 80.f, win.height / 2.f});
+        microphone->setID("microphone"_spr);
+
+        auto clock = CCMenuItemSpriteExtra::create(CCSprite::create("clock.png"_spr), nullptr, things, menu_selector(livingroom_stuff::clock));
+        clock->setPosition({win.width / 2.f, win.height / 8.f});
+        clock->setID("clock"_spr);
+
         auto p = CCSprite::create("pet_peashooter.png"_spr);
         p->setScale(0.7f);
         auto peashooter = CCMenuItemSpriteExtra::create(p, nullptr, things, menu_selector(livingroom_stuff::peashooter));
@@ -67,6 +88,8 @@ namespace rooms {
         menu->setPosition({0,0});
         menu->addChild(tele);
         menu->addChild(peashooter);
+        menu->addChild(microphone);
+        menu->addChild(clock);
         menu->addChild(things);
         menu->setID("room-menu"_spr);
         return menu;
