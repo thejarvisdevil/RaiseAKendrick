@@ -13,7 +13,7 @@ namespace rooms {
 
         void explosion(CCObject*) {
             if (parent) {
-                devlin::set_emotion(parent, "sad.gif"_spr, 3.0f, 0.5f, 0.5f);
+                devlin::set_emotion(parent, "sad.webp"_spr, 3.0f, 0.5f, 0.5f);
                 auto win = CCDirector::get()->getWinSize();
 
                 if (auto haha1 = parent->getChildByID("nuke"_spr)) { haha1->removeFromParent(); }
@@ -69,7 +69,7 @@ namespace rooms {
 
         void touchgrass(CCObject*) {
             if (parent) {
-                devlin::set_emotion(parent, "angry.gif"_spr, 2.f, 0.3f, 0.2f);
+                devlin::set_emotion(parent, "angry.webp"_spr, 2.f, 0.3f, 0.2f);
                 FMODAudioEngine::sharedEngine()->playEffect("pou_no.mp3"_spr);
             }
         }

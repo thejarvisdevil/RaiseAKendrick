@@ -27,12 +27,12 @@ public:
 	bool init() override {
 		if (!CCLayer::init()) return false;
 		this->setKeypadEnabled(true);
-		FMODAudioEngine::sharedEngine()->playMusic("bgm.mp3"_spr, true, 1.0f, 0);
+		GameManager::get()->fadeInMusic("bgm.mp3"_spr);
 		auto win = CCDirector::get()->getWinSize();
 
 	    auto exitbtn = CCSprite::createWithSpriteFrameName("GJ_closeBtn_001.png");
 	    exitbtn->setScale(0.5f);
-		auto f = CCMenuItemSpriteExtra::create(exitbtn, nullptr, this, menu_selector(KendrickLayer::GOBACK));
+		auto f = CCMenuItemSpriteExtra::create(exitbtn, nullptr, this, menu_selector(KendrickLayer::onBack));
 		f->setPosition({win.width - 30.f, win.height - 30.f});
 		f->setID("exit-btn"_spr);
 
@@ -81,13 +81,14 @@ public:
 		return true;
 	}
 
-	void GOBACK(CCObject*) {
-		CCDirector::get()->replaceScene(CCTransitionFade::create(0.5f, MenuLayer::scene(false)));
+	void onBack(CCObject*) {
+		CCDirector::get()->popScene();
+		GameManager::get()->fadeInMenuMusic();
 	}
 
 	virtual void keyBackClicked() {
-		this->GOBACK(nullptr);
-	}
+    this->onBack(nullptr);
+  }
 
 	void prevRoom(CCObject*) {
 		currentRoom = (currentRoom - 1 + (int)rooms.size()) % (int)rooms.size();
@@ -104,14 +105,10 @@ public:
 	}
 
 	void suggest(CCObject*) {
-		#ifdef GEODE_IS_IOS
-		    FLAlertLayer::create("Suggestions", "Please send suggestions to jarvisdevil in-game or @jarvisdevlin on Discord.", "OK")->show();
-		#else
-		    if (auto popup = GJWriteMessagePopup::create(30483751, 257687092)) {
-			    popup->updateSubject(gd::string("Suggestion For Kendrick"));
-			    popup->show();
-		    }
-		#endif
+		if (auto popup = GJWriteMessagePopup::create(30483751, 257687092)) {
+			popup->updateSubject(gd::string("Suggestion For Kendrick"));
+			popup->show();
+		}
 	}
 
 	void KILL() {
@@ -164,7 +161,7 @@ public:
 			addChild(weeeeee);
 			weeeeee->setID("room-menu"_spr);
 		}
-		devlin::set_emotion(this, "excited.gif"_spr, 3.0f, 0.5f, 0.5f);
+		devlin::set_emotion(this, "excited.webp"_spr, 3.0f, 0.5f, 0.5f);
 	}
 
 	static cocos2d::CCScene* scene() {
@@ -199,6 +196,6 @@ class $modify(KLMenuLayer, MenuLayer) {
 		if (1 == 1) {
 			geode::log::info("tank u 4 usin my Mod :) - jarvisdevil");
 		}
-		CCDirector::get()->replaceScene(CCTransitionFade::create(0.5f, KendrickLayer::scene()));
+		CCDirector::get()->pushScene(CCTransitionFade::create(0.5f, KendrickLayer::scene()));
 	}
 };

@@ -10,14 +10,14 @@ namespace rooms {
         cocos2d::CCLayer* parent = nullptr;
         void toilet(CCObject*) {
             if (parent) {
-                devlin::set_emotion(parent, "wth.gif"_spr, 2.f, 0.3f, 0.2f);
+                devlin::set_emotion(parent, "wth.webp"_spr, 2.f, 0.3f, 0.2f);
                 FMODAudioEngine::sharedEngine()->playEffect("fart.mp3"_spr);
             }
         }
 
         void shower(CCObject*) {
             if (parent) {
-                devlin::set_emotion(parent, "angry.gif"_spr, 2.f, 0.3f, 0.2f);
+                devlin::set_emotion(parent, "angry.webp"_spr, 2.f, 0.3f, 0.2f);
                 FMODAudioEngine::sharedEngine()->playEffect("pou_no.mp3"_spr);
             }
         }
@@ -41,7 +41,7 @@ namespace rooms {
         auto win = CCDirector::get()->getWinSize();
         auto things = new bathroom_stuff();
         things->parent = parent;
-        devlin::set_emotion(parent, "excited.gif"_spr, 2.f, 0.3f, 0.2f);
+        devlin::set_emotion(parent, "excited.webp"_spr, 2.f, 0.3f, 0.2f);
 
         auto toilet = CCMenuItemSpriteExtra::create(CCSprite::create("toilet.png"_spr), nullptr, things, menu_selector(bathroom_stuff::toilet));
         toilet->setPosition({win.width / 6.5f, win.height / 2.4f});
