@@ -1,7 +1,6 @@
 #include <Geode/Geode.hpp>
 #include <Geode/modify/MenuLayer.hpp>
 #include <Geode/binding/FMODAudioEngine.hpp>
-#include <user95401.gif-sprites/include/CCGIFAnimatedSprite.hpp>
 #include <algorithm>
 #include "funcs.hpp"
 #include "rooms/livingroom.hpp"
@@ -9,6 +8,12 @@
 #include "rooms/bathroom.hpp"
 #include "rooms/kitchen.hpp"
 #include "rooms/outside.hpp"
+#include "rooms/snoopland.hpp"
+#include "rooms/playground.hpp"
+#include "rooms/basement.hpp"
+#include "rooms/car.hpp"
+#include "rooms/mcdonalds.hpp"
+#include "rooms/garden.hpp"
 using namespace geode::prelude;
 
 // i lost a lot of sleep and brain cells making this mod. i only have 5 hours to sleep every night and now its done and its worth it!
@@ -16,11 +21,12 @@ using namespace geode::prelude;
 class KendrickLayer : public cocos2d::CCLayer {
 public:
 	CREATE_FUNC(KendrickLayer);
-	std::vector<std::string> rooms = {"livingroom", "bedroom", "bathroom", "kitchen", "outside"};
+	std::vector<std::string> rooms = {"livingroom", "bedroom", "bathroom", "kitchen", "outside", "snoopland", "playground", "basement", "car", "mcdonalds", "garden"};
 	int currentRoom = 0;
 
 	bool init() override {
 		if (!CCLayer::init()) return false;
+		this->setKeypadEnabled(true);
 		FMODAudioEngine::sharedEngine()->playMusic("bgm.mp3"_spr, true, 1.0f, 0);
 		auto win = CCDirector::get()->getWinSize();
 
@@ -79,6 +85,10 @@ public:
 		CCDirector::get()->replaceScene(CCTransitionFade::create(0.5f, MenuLayer::scene(false)));
 	}
 
+	virtual void keyBackClicked() {
+		this->GOBACK(nullptr);
+	}
+
 	void prevRoom(CCObject*) {
 		currentRoom = (currentRoom - 1 + (int)rooms.size()) % (int)rooms.size();
 		applyRoom(rooms[currentRoom]);
@@ -94,7 +104,7 @@ public:
 	}
 
 	void suggest(CCObject*) {
-		#ifdef GEODE_IS_APPLE
+		#ifdef GEODE_IS_IOS
 		    FLAlertLayer::create("Suggestions", "Please send suggestions to jarvisdevil in-game or @jarvisdevlin on Discord.", "OK")->show();
 		#else
 		    if (auto popup = GJWriteMessagePopup::create(30483751, 257687092)) {
@@ -131,6 +141,24 @@ public:
 		} else if (name == "outside") {
 			devlin::set_room(this, "Outside", "outside.png"_spr);
  			weeeeee = rooms::theoutside(this);
+		} else if (name == "snoopland") {
+			devlin::set_room(this, "Snoopland", "snoopland.png"_spr);
+ 			weeeeee = rooms::thesnoopland(this);
+		} else if (name == "playground") {
+			devlin::set_room(this, "Playground", "playground.png"_spr);
+ 			weeeeee = rooms::theplayground(this);
+		} else if (name == "basement") {
+			devlin::set_room(this, "Basement", "basement.png"_spr);
+ 			weeeeee = rooms::thebasement(this);
+		} else if (name == "car") {
+			devlin::set_room(this, "Car", "car.png"_spr);
+ 			weeeeee = rooms::thecar(this);
+		} else if (name == "mcdonalds") {
+			devlin::set_room(this, "McDonald's", "mcdonalds_place.png"_spr);
+ 			weeeeee = rooms::themcdonalds(this);
+		} else if (name == "garden") {
+			devlin::set_room(this, "Garden", "garden.png"_spr);
+ 			weeeeee = rooms::thegarden(this);
 		}
 		if (weeeeee) {
 			addChild(weeeeee);

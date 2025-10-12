@@ -50,11 +50,11 @@ namespace rooms {
         sleep->setID("sleep"_spr);
 
         auto mirror = CCMenuItemSpriteExtra::create(CCSprite::create("mirror.png"_spr), nullptr, things, menu_selector(bedroom_stuff::mirror));
-        mirror->setPosition({win.width - 480.f, win.height / 2.f});
+        mirror->setPosition({win.width / 8.5f, win.height / 2.f});
         mirror->setID("mirror"_spr);
 
         auto lights = CCMenuItemSpriteExtra::create(CCSprite::create("lights.png"_spr), nullptr, things, menu_selector(bedroom_stuff::lightsOff));
-        lights->setPosition({win.width - 12.f, win.height / 2.f});
+        lights->setPosition({win.width / 1.1f, win.height / 2.f});
         lights->setID("lights"_spr);
 
         auto menu = CCMenu::create();

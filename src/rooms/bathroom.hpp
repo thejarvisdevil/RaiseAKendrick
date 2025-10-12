@@ -28,6 +28,13 @@ namespace rooms {
                 FMODAudioEngine::sharedEngine()->playEffect("twinkle.mp3"_spr);
             }
         }
+
+        void shave(CCObject*) {
+            if (parent) {
+                devlin::set_emotion(parent, "angry.gif"_spr, 2.f, 0.3f, 0.2f);
+                FMODAudioEngine::sharedEngine()->playEffect("pou_no.mp3"_spr);
+            }
+        }
     };
 
     inline cocos2d::CCMenu* thebathroom(cocos2d::CCLayer* parent = nullptr) {
@@ -48,11 +55,16 @@ namespace rooms {
         mirror->setPosition({win.width / 2.f - 60.f, win.height / 1.5f});
         mirror->setID("mirror"_spr);
 
+        auto shave = CCMenuItemSpriteExtra::create(CCSprite::create("shave.png"_spr), nullptr, things, menu_selector(bathroom_stuff::shave));
+        shave->setPosition({win.width / 2.f - 30.f, win.height / 1.5f - 80.f});
+        shave->setID("shave"_spr);
+
         auto menu = CCMenu::create();
         menu->setPosition({0,0});
         menu->addChild(toilet);
         menu->addChild(shower);
         menu->addChild(mirror);
+        menu->addChild(shave);
         menu->addChild(things);
         menu->setID("room-menu"_spr);
         return menu;

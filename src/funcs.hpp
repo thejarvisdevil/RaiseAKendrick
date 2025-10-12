@@ -1,6 +1,5 @@
 #pragma once
 #include <Geode/Geode.hpp>
-#include <user95401.gif-sprites/include/CCGIFAnimatedSprite.hpp>
 #include <algorithm>
 #include <string>
 
