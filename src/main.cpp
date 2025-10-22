@@ -85,7 +85,7 @@ public:
 		CCDirector::get()->replaceScene(CCTransitionFade::create(0.5f, MenuLayer::scene(false)));
 	}
 
-	virtual void keyBackClicked() {
+	void keyBackClicked() {
 		this->GOBACK(nullptr);
 	}
 
