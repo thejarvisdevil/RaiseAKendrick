@@ -18,7 +18,7 @@ namespace rooms {
         void weed(CCObject*);
             if (parent) {
                 FLAlertLayer::create("no", "dont do drugs", "OK")->show();
-            }
+            };
         }
     };
 
@@ -46,4 +46,5 @@ namespace rooms {
     }
 
 }
+
 
