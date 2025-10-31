@@ -18,7 +18,8 @@
 	"resources": {
 		"sprites": [
 			"resources/image/*.png",
-			"resources/image/items/*.png"
+			"resources/image/items/*.png",
+			"resources/image/items/*.jpg"
 		],
 		"files": [
 			"resources/image/*.gif",
@@ -26,6 +27,7 @@
 		]
 	},
 	"tags": ["universal", "modtober25", "joke"],
-	"links": {"community": "https://dsc.gg/devlin", "homepage": "https://jarvisdevil.com/?source=kendrick_geode"}
+	"links": {"community": "https://dsc.gg/devlin", "source": "https://github.com/thejarvisdevil/RaiseAKendrick", "homepage": "https://jarvisdevil.com/?source=kendrick_geode"}
 
 }
+
