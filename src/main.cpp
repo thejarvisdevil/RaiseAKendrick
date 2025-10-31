@@ -201,4 +201,5 @@ class $modify(KLMenuLayer, MenuLayer) {
 		}
 		CCDirector::get()->replaceScene(CCTransitionFade::create(0.5f, KendrickLayer::scene()));
 	}
+
 };
