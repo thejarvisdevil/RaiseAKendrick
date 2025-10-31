@@ -12,9 +12,10 @@ namespace rooms {
             auto win = CCDirector::get()->getWinSize();
             if (parent) {
                 FMODAudioEngine::sharedEngine()->playMusic("snoopdogg.mp3"_spr, true, 1.0f, 0);
-            }
-        
-        void weed(CCObject*) {
+            };
+    class snoopland_stuff {
+    public:
+        void weed(CCObject*);
             if (parent) {
                 FLAlertLayer::create("no", "dont do drugs", "OK")->show();
             }
@@ -45,3 +46,4 @@ namespace rooms {
     }
 
 }
+
