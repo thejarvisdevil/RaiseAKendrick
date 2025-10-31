@@ -42,7 +42,7 @@ namespace rooms {
         snoopdogg->setID("snoopdogg"_spr);
 
         auto weedItem = CCMenuItemSpriteExtra::create(
-            CCSprite::create("weed.jpg"_spr),
+            CCSprite::create("weed.png"_spr),
             nullptr,
             things,
             menu_selector(snoopland_stuff::weed)
