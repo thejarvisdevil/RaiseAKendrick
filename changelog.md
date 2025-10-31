@@ -1,3 +1,9 @@
+# 1.1.2
+- added weed (by FijiAura)
+- made it more clear that the peashooter's name is todd (also by FijiAura)
+- replaced large png sprites to jpg sprites, reducing file size by alot (i think you know who its by)
+# 1.1.1
+- fix bugs
 # 1.1.0
 - moved to imageplus, goodbye gif sprites!
 - escape key implementation, thanks raydeeux
@@ -27,4 +33,6 @@
 # 1.0.1
 - add todd
 # 1.0.0
+
 - it dropped!
+

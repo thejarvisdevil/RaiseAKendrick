@@ -31,7 +31,7 @@ namespace rooms {
                     "e"
                 };
                 std::string message = messages[rand() % messages.size()];
-                FLAlertLayer::create("Peashooter", message, "OK")->show();
+                FLAlertLayer::create("Todd the Peashooter", message, "OK")->show();
             }
         }
     };
@@ -54,4 +54,5 @@ namespace rooms {
         menu->setID("room-menu"_spr);
         return menu;
     }
+
 }
