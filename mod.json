@@ -8,7 +8,7 @@
 	},
 	"id": "jarvisdevil.raise_a_kendrick_lamar",
 	"name": "Raise a Kendrick Lamar",
-	"version": "v1.1.1",
+	"version": "v1.1.2",
 	"developer": "jarvisdevil",
 	"description": "Adopt & Raise a Cute Baby Kendrick Lamar",
 	"dependencies": {
@@ -30,4 +30,5 @@
 	"links": {"community": "https://dsc.gg/devlin", "source": "https://github.com/thejarvisdevil/RaiseAKendrick", "homepage": "https://jarvisdevil.com/?source=kendrick_geode"}
 
 }
+
 
