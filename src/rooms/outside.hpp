@@ -19,7 +19,7 @@ namespace rooms {
                 if (auto haha1 = parent->getChildByID("nuke"_spr)) { haha1->removeFromParent(); }
                 if (auto haha2 = parent->getChildByID("ashbaby"_spr)) { haha2->removeFromParent(); }
 
-                auto nuke = CCSprite::create("nuke.png"_spr);
+                auto nuke = CCSprite::create("nuke.jpg"_spr);
                 nuke->setID("nuke"_spr);
                 nuke->setPosition({win.width / 2, win.height / 2});
                 nuke->setScale(0.0f);
@@ -30,7 +30,7 @@ namespace rooms {
                     cocos2d::CCDelayTime::create(0.5f),
                     nullptr
                 ));
-                auto ash = CCSprite::create("ashbaby.png"_spr);
+                auto ash = CCSprite::create("ashbaby.jpg"_spr);
                 ash->setID("ashbaby"_spr);
                 ash->setPosition({win.width / 2, win.height / 2});
                 ash->setOpacity(0);

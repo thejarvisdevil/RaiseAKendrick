@@ -62,7 +62,7 @@ namespace rooms {
         auto things = new livingroom_stuff();
         things->parent = parent;
 
-        auto tvscreen = CCSprite::create("breaking_news.png"_spr);
+        auto tvscreen = CCSprite::create("breaking_news.jpg"_spr);
         tvscreen->setScale(0.15f);
         tvscreen->setScaleX(0.15f * 1.2f);
         tvscreen->setScaleY(0.15f * 1.1f);

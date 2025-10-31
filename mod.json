@@ -19,6 +19,7 @@
 		"sprites": [
 			"resources/image/*.png",
 			"resources/image/items/*.png",
+			"resources/image/*.jpg",
 			"resources/image/items/*.jpg"
 		],
 		"files": [

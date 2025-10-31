@@ -35,7 +35,7 @@ namespace rooms {
         things->parent = parent;
         devlin::set_emotion(parent, "wth.gif"_spr, 3.0f, 0.3f, 0.2f);
 
-        auto dr = CCSprite::create("drake.png"_spr);
+        auto dr = CCSprite::create("drake.jpg"_spr);
         dr->setScale(2.5f);
         auto drake = CCMenuItemSpriteExtra::create(dr, nullptr, things, menu_selector(basement_stuff::drake));
         drake->setPosition({win.width * 0.65f, win.height / 4.20f});
