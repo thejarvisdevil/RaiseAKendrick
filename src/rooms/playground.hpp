@@ -69,7 +69,7 @@ namespace rooms {
         backflip->setPosition({win.width / 2.2f, win.height / 8.0f});
         backflip->setID("backflip"_spr);
 
-        auto dngl = CCSprite::create("dingle.jpg"_spr);
+        auto dngl = CCSprite::create("dingle.png"_spr);
         dngl->setFlipX(true);
         auto dingle = CCMenuItemSpriteExtra::create(dngl, nullptr, things, menu_selector(playground_stuff::dingle));
         dingle->setPosition({win.width / 24.f, win.height / 1.5f});

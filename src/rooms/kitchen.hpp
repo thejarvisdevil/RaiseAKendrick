@@ -71,7 +71,7 @@ namespace rooms {
             if (parent) {
                 if (auto macnchese = parent->getChildByID("macnchese"_spr)) { macnchese->removeFromParent(); }
 
-                auto macnchese = CCSprite::create("macandcheese.jpg"_spr);
+                auto macnchese = CCSprite::create("macandcheese.png"_spr);
                 macnchese->setID("macnchese"_spr);
                 macnchese->setPosition({win.width / 2, win.height / 2});
                 macnchese->setScale(0.0f);

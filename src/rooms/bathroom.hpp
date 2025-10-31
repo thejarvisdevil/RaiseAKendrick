@@ -24,7 +24,7 @@ namespace rooms {
 
         void mirror(CCObject*) {
             if (parent) {
-                devlin::set_emotion(parent, "taylor.jpg"_spr, 2.f, 0.3f, 0.2f);
+                devlin::set_emotion(parent, "taylor.png"_spr, 2.f, 0.3f, 0.2f);
                 FMODAudioEngine::sharedEngine()->playEffect("twinkle.mp3"_spr);
             }
         }

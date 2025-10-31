@@ -127,37 +127,37 @@ public:
 		KILL();
 		CCMenu* weeeeee = nullptr;
 		if (name == "bedroom") {
-			devlin::set_room(this, "Bedroom", "bedroom.jpg"_spr);
+			devlin::set_room(this, "Bedroom", "bedroom.png"_spr);
  			weeeeee = rooms::thebedroom(this);
 		} else if (name == "livingroom") {
-			devlin::set_room(this, "Living Room", "livingroom.jpg"_spr);
+			devlin::set_room(this, "Living Room", "livingroom.png"_spr);
  			weeeeee = rooms::thelivingroom(this);
 		} else if (name == "bathroom") {
-			devlin::set_room(this, "Bathroom", "bathroom.jpg"_spr);
+			devlin::set_room(this, "Bathroom", "bathroom.png"_spr);
  			weeeeee = rooms::thebathroom(this);
 		} else if (name == "kitchen") {
-			devlin::set_room(this, "Kitchen", "kitchen.jpg"_spr);
+			devlin::set_room(this, "Kitchen", "kitchen.png"_spr);
  			weeeeee = rooms::thekitchen(this);
 		} else if (name == "outside") {
-			devlin::set_room(this, "Outside", "outside.jpg"_spr);
+			devlin::set_room(this, "Outside", "outside.png"_spr);
  			weeeeee = rooms::theoutside(this);
 		} else if (name == "snoopland") {
-			devlin::set_room(this, "Snoopland", "snoopland.jpg"_spr);
+			devlin::set_room(this, "Snoopland", "snoopland.png"_spr);
  			weeeeee = rooms::thesnoopland(this);
 		} else if (name == "playground") {
-			devlin::set_room(this, "Playground", "playground.jpg"_spr);
+			devlin::set_room(this, "Playground", "playground.png"_spr);
  			weeeeee = rooms::theplayground(this);
 		} else if (name == "basement") {
-			devlin::set_room(this, "Basement", "basement.jpg"_spr);
+			devlin::set_room(this, "Basement", "basement.png"_spr);
  			weeeeee = rooms::thebasement(this);
 		} else if (name == "car") {
-			devlin::set_room(this, "Car", "car.jpg"_spr);
+			devlin::set_room(this, "Car", "car.png"_spr);
  			weeeeee = rooms::thecar(this);
 		} else if (name == "mcdonalds") {
-			devlin::set_room(this, "McDonald's", "mcdonalds_place.jpg"_spr);
+			devlin::set_room(this, "McDonald's", "mcdonalds_place.png"_spr);
  			weeeeee = rooms::themcdonalds(this);
 		} else if (name == "garden") {
-			devlin::set_room(this, "Garden", "garden.jpg"_spr);
+			devlin::set_room(this, "Garden", "garden.png"_spr);
  			weeeeee = rooms::thegarden(this);
 		}
 		if (weeeeee) {
