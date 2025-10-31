@@ -13,8 +13,15 @@ namespace rooms {
             if (parent) {
                 FMODAudioEngine::sharedEngine()->playMusic("snoopdogg.mp3"_spr, true, 1.0f, 0);
             }
+        
+        void weed(CCObject*) {
+            if (parent) {
+                FLAlertLayer::create("no", "dont do drugs", "OK")->show();
+            }
         }
     };
+
+    
 
     inline cocos2d::CCMenu* thesnoopland(cocos2d::CCLayer* parent = nullptr) {
         auto win = CCDirector::get()->getWinSize();
@@ -26,10 +33,15 @@ namespace rooms {
         snoopdogg->setPosition({win.width * 0.8f, win.height / 4.20f});
         snoopdogg->setID("snoopdogg"_spr);
 
+        auto weed = CCMenuItemSpriteExtra::create(CCSprite::create("weed.jpg"_spr), nullptr, things, menu_selector(snoopland_stuff::weed));
+        weed->setPosition({win.width / 12.f, win.height / 2.f});
+        weed->setID("weed"_spr);
+
         auto menu = CCMenu::create();
         menu->setPosition({0,0});
         menu->addChild(snoopdogg);
         menu->setID("room-menu"_spr);
         return menu;
     }
+
 }
