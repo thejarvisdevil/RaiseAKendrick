@@ -1,14 +1,14 @@
 {
-	"geode": "4.9.0",
+	"geode": "5.7.1",
 	"gd": {
-		"win": "2.2074",
-		"android": "2.2074",
-		"mac": "2.2074",
-		"ios": "2.2074"
+		"win": "2.2081",
+		"android": "2.2081",
+		"mac": "2.2081",
+		"ios": "2.2081"
 	},
 	"id": "jarvisdevil.raise_a_kendrick_lamar",
 	"name": "Raise a Kendrick Lamar",
-	"version": "v1.1.1",
+	"version": "v1.1.3",
 	"developer": "jarvisdevil",
 	"description": "Adopt & Raise a Cute Baby Kendrick Lamar",
 	"dependencies": {
@@ -27,5 +27,4 @@
 	},
 	"tags": ["universal", "modtober25", "joke"],
 	"links": {"community": "https://dsc.gg/devlin", "homepage": "https://jarvisdevil.com/?source=kendrick_geode"}
-
 }

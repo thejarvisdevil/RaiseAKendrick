@@ -14,6 +14,7 @@
 #include "rooms/car.hpp"
 #include "rooms/mcdonalds.hpp"
 #include "rooms/garden.hpp"
+#include "rooms/christmas.hpp"
 using namespace geode::prelude;
 
 // i lost a lot of sleep and brain cells making this mod. i only have 5 hours to sleep every night and now its done and its worth it!
@@ -21,7 +22,7 @@ using namespace geode::prelude;
 class KendrickLayer : public cocos2d::CCLayer {
 public:
 	CREATE_FUNC(KendrickLayer);
-	std::vector<std::string> rooms = {"livingroom", "bedroom", "bathroom", "kitchen", "outside", "snoopland", "playground", "basement", "car", "mcdonalds", "garden"};
+	std::vector<std::string> rooms = {"livingroom", "bedroom", "bathroom", "kitchen", "outside", "snoopland", "playground", "basement", "car", "mcdonalds", "garden", "christmas"};
 	int currentRoom = 0;
 
 	bool init() override {
@@ -66,15 +67,22 @@ public:
 		freepromo->setPosition({15.f, win.height - 15.f});
 		freepromo->setID("discord-btn"_spr);
 
+		auto yt = CCSprite::createWithSpriteFrameName("gj_ytIcon_001.png");
+		yt->setScale(0.5f);
+		auto freepromo2 = CCMenuItemSpriteExtra::create(yt, nullptr, this, menu_selector(KendrickLayer::freepromo2));
+		freepromo2->setPosition({45.f, win.height - 15.f});
+		freepromo2->setID("yt-btn"_spr);
+
 		auto suggestions = CCSprite::createWithSpriteFrameName("accountBtn_messages_001.png");
 		suggestions->setScale(0.4f);
 		auto suggest = CCMenuItemSpriteExtra::create(suggestions, nullptr, this, menu_selector(KendrickLayer::suggest));
-		suggest->setPosition({60.f, win.height - 15.f});
+		suggest->setPosition({120.f, win.height - 15.f});
 		suggest->setID("suggestions-btn"_spr);
 
 		auto yeeeeee = CCMenu::create();
 		yeeeeee->setPosition({0,0});
 		yeeeeee->addChild(freepromo);
+		yeeeeee->addChild(freepromo2);
 		yeeeeee->addChild(suggest);
 		this->addChild(yeeeeee, -2);
 
@@ -100,18 +108,24 @@ public:
 	}
 
 	void freepromo(CCObject*) {
-		geode::utils::web::openLinkInBrowser("https://dsc.gg/devlin");
+		//geode::utils::web::openLinkInBrowser("https://dsc.gg/devlin");
+                FLAlertLayer::create("Discord", "My GD focused Discord Server has been closed and I refuse to promote my new one here. @jarvisdevlin on Discord if you want to say hello.", "OK")->show();
+	}
+
+	void freepromo2(CCObject*) {
+		geode::utils::web::openLinkInBrowser("https://www.youtube.com/shorts/QIbhjawSQiQ");
 	}
 
 	void suggest(CCObject*) {
-		#ifdef GEODE_IS_IOS
-		    FLAlertLayer::create("Suggestions", "Please send suggestions to jarvisdevil in-game or @jarvisdevlin on Discord.", "OK")->show();
-		#else
-		    if (auto popup = GJWriteMessagePopup::create(30483751, 257687092)) {
-			    popup->updateSubject(gd::string("Suggestion For Kendrick"));
-			    popup->show();
-		    }
-		#endif
+		//#ifdef GEODE_IS_IOS
+		//    FLAlertLayer::create("Suggestions", "Please send suggestions to jarvisdevil in-game or @jarvisdevlin on Discord.", "OK")->show();
+		//#else
+		//    if (auto popup = GJWriteMessagePopup::create(30483751, 257687092)) {
+		//	    popup->updateSubject(gd::string("Suggestion For Kendrick"));
+		//	    popup->show();
+		//    }
+		//#endif
+		FLAlertLayer::create("Suggestions", "I don't accept these anymore or check GD often. If you still want to say hi to me then @jarvisdevlin is my Discord.", "OK")->show();
 	}
 
 	void KILL() {
@@ -121,6 +135,13 @@ public:
 		removeChildByID("roomTitle"_spr);
 		removeChildByID("ashbaby"_spr);
 		removeChildByID("nuke"_spr);
+		removeChildByID("sackboy"_spr);
+		for (int i = this->getChildren()->count() - 1; i >= 0; --i) {
+    		auto child = static_cast<cocos2d::CCNode*>(this->getChildren()->objectAtIndex(i));
+    		if (child && child->getID() == "holymoly"_spr) {
+        		this->removeChild(child);
+    		}
+		}
 	}
 
 	void applyRoom(const std::string& name) {
@@ -159,6 +180,9 @@ public:
 		} else if (name == "garden") {
 			devlin::set_room(this, "Garden", "garden.png"_spr);
  			weeeeee = rooms::thegarden(this);
+		} else if (name == "christmas") {
+			devlin::set_room(this, "Christmas", "christmas.png"_spr);
+ 			weeeeee = rooms::thechristmas(this);
 		}
 		if (weeeeee) {
 			addChild(weeeeee);
