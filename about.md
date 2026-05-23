@@ -7,6 +7,3 @@ Have fun with Kendrick Lamar with this cool and amazing mod that will <cr>BLOW Y
 ## Credits
 <cy>beeswithchainsaws</c> - "Not Like Us" MIDI Cover  
 <cy>Adobe Stock</c> & <co>Getty Images</c> - I stole all dem images  
-<cy>6Yt</c> - amazing voice acting  
-  
-<cg>I also take suggestions! If you have any easy to implement brainrotted ideas, click on that message box to be put here for that FREE PROMO!</c>
